@@ -11,6 +11,7 @@ import { toast } from 'sonner';
 export default function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ export default function Register() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await authAPI.register({ name, email, password, role: 'Parent' });
+      const response = await authAPI.register({ name, email, phone, password, role: 'Parent' });
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('user', JSON.stringify(response.data.user));
       toast.success('Registration successful!');
@@ -39,7 +40,6 @@ export default function Register() {
           <div className="mx-auto w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
             <Activity className="w-6 h-6 text-primary-foreground" />
           </div>
-          <CardTitle className="text-2xl font-bold">Create Parent Account</CardTitle>
           <CardDescription>Sign up to get started</CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
@@ -64,6 +64,18 @@ export default function Register() {
                 placeholder="your.email@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
+                disabled={isLoading}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="phone">Phone Number</Label>
+              <Input
+                id="phone"
+                type="tel"
+                placeholder="+1 234 567 8900"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
                 required
                 disabled={isLoading}
               />

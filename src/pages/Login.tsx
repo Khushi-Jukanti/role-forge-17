@@ -66,6 +66,19 @@ export default function Login() {
             <Button type="submit" className="w-full" disabled={isLoading}>
               {isLoading ? 'Signing in...' : 'Sign In'}
             </Button>
+            <div className="relative w-full">
+              <div className="absolute inset-0 flex items-center">
+                <span className="w-full border-t" />
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-card px-2 text-muted-foreground">Or</span>
+              </div>
+            </div>
+            <Link to="/parent-login" className="w-full">
+              <Button type="button" variant="outline" className="w-full">
+                Parent Login with OTP
+              </Button>
+            </Link>
             <p className="text-sm text-center text-muted-foreground">
               New parent?{' '}
               <Link to="/register" className="text-primary hover:underline font-medium">

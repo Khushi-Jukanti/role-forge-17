@@ -7,6 +7,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ParentLoginOTP from "./pages/ParentLoginOTP";
 import Unauthorized from "./pages/Unauthorized";
 import Hierarchy from "./pages/Hierarchy";
 import SuperAdminDashboard from "./pages/dashboards/SuperAdminDashboard";
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/" element={<Navigate to="/login" replace />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/parent-login" element={<ParentLoginOTP />} />
             <Route path="/unauthorized" element={<Unauthorized />} />
             
             {/* Dashboard Routes */}

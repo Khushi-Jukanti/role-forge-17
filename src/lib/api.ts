@@ -61,11 +61,22 @@ export interface HierarchyResponse {
   hierarchy: User[];
 }
 
+export interface OTPLoginData {
+  phone: string;
+  otp: string;
+}
+
+export interface OTPRequestData {
+  phone: string;
+}
+
 // Auth APIs
 export const authAPI = {
   login: (data: LoginData) => api.post<LoginResponse>('/auth/login', data),
   register: (data: RegisterData) => api.post<LoginResponse>('/auth/register', data),
   registerAdmin: (data: RegisterData) => api.post<LoginResponse>('/auth/register/admin', data),
+  loginOTP: (data: OTPLoginData) => api.post<LoginResponse>('/auth/login/otp', data),
+  requestOTP: (data: OTPRequestData) => api.post<{ message: string }>('/auth/request-otp', data),
 };
 
 // User APIs

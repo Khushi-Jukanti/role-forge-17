@@ -31,6 +31,52 @@ export interface RegisterData {
   role?: string;
 }
 
+export interface Child {
+  _id: string;
+  firstName: string;
+  lastName?: string;
+  dateOfBirth: string;
+  gender: 'Boy' | 'Girl';
+  ageInMonths: number;
+}
+
+export interface Assessment {
+  _id: string;
+  title: string;
+  description: string;
+  ageGroup: string;
+  minAgeMonths: number;
+  maxAgeMonths: number;
+  questions: AssessmentQuestion[];
+}
+
+export interface AssessmentQuestion {
+  _id: string;
+  text: string;
+  category: string;
+}
+
+export interface AssessmentResult {
+  _id: string;
+  childId: string;
+  assessmentId: string;
+  answers: { isPositive: boolean }[];
+  redPercent: number;
+  needsConsultation: boolean;
+  createdAt: string;
+}
+
+export interface Booking {
+  _id: string;
+  childId: string;
+  resultId: string;
+  orderId: string;
+  paymentId?: string;
+  amount: number;
+  status: 'pending' | 'paid' | 'failed';
+  createdAt: string;
+}
+
 export interface CreateUserData {
   name: string;
   email: string;
@@ -90,6 +136,33 @@ export const userAPI = {
   createPsychiatrist: (data: CreateUserData) => api.post<{ message: string; user: User }>('/users/create/psychiatrist', data),
   createHelpDesk: (data: CreateUserData) => api.post<{ message: string; user: User }>('/users/create/helpdesk', data),
   createMarketing: (data: CreateUserData) => api.post<{ message: string; user: User }>('/users/create/marketing', data),
+};
+
+// Parent APIs
+export const parentAPI = {
+  // Children management
+  addChild: (data: { firstName: string; lastName?: string; dateOfBirth: string; gender: 'Boy' | 'Girl' }) => 
+    api.post<{ message: string; child: Child }>('/parent/children', data),
+  getChildren: () => api.get<{ children: Child[] }>('/parent/children'),
+  getChild: (id: string) => api.get<{ child: Child }>(`/parent/children/${id}`),
+  updateChild: (id: string, data: Partial<Child>) => api.put<{ message: string; child: Child }>(`/parent/children/${id}`, data),
+  deleteChild: (id: string) => api.delete<{ message: string }>(`/parent/children/${id}`),
+  
+  // Assessments
+  getAssessmentsByAge: (ageInMonths: number) => api.get<{ assessments: Assessment[] }>(`/parent/assessments?age=${ageInMonths}`),
+  submitAssessment: (data: { childId: string; assessmentId: string; answers: { isPositive: boolean }[] }) =>
+    api.post<{ message: string; result: AssessmentResult }>('/parent/assessments/submit', data),
+  
+  // Results
+  getChildResults: (childId: string) => api.get<{ results: AssessmentResult[] }>(`/parent/results/child/${childId}`),
+  getResult: (id: string) => api.get<{ result: AssessmentResult }>(`/parent/results/${id}`),
+  
+  // Booking & Payment
+  createOrder: (data: { childId: string; resultId: string }) =>
+    api.post<{ orderId: string; amount: number; key: string }>('/parent/booking/create-order', data),
+  verifyPayment: (data: { razorpay_order_id: string; razorpay_payment_id: string; razorpay_signature: string }) =>
+    api.post<{ message: string; booking: Booking }>('/parent/booking/verify', data),
+  getBookings: () => api.get<{ bookings: Booking[] }>('/parent/bookings'),
 };
 
 export default api;

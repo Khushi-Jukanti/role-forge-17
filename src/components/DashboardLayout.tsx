@@ -14,7 +14,9 @@ import {
   Stethoscope,
   HeartPulse,
   Phone,
-  TrendingUp
+  TrendingUp,
+  GraduationCap,
+  MessageCircle
 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
@@ -33,6 +35,8 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
     const role = user?.role;
     const baseItems = [
       { icon: LayoutDashboard, label: 'Dashboard', path: `/dashboard/${role?.toLowerCase().replace(/\s+/g, '-')}` },
+      { icon: GraduationCap, label: 'Training Hub', path: '/training' },
+      { icon: MessageCircle, label: 'Community', path: '/community' },
     ];
 
     const createUserItems = [];

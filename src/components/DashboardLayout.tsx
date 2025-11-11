@@ -110,8 +110,8 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
           {/* Logo */}
           <div className="h-16 flex items-center px-6 border-b border-sidebar-border">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="ManoSetu" className="w-8 h-8 object-contain rounded-lg" />
-              {sidebarOpen && <span className="font-bold text-sidebar-foreground">ManoSetu</span>}
+              <img src={logo} alt="ManoSetu" className="w-12 h-12 object-contain rounded-lg" />
+              {sidebarOpen && <span className="font-bold text-lg text-sidebar-foreground">ManoSetu</span>}
             </div>
           </div>
 

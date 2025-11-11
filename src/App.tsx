@@ -15,6 +15,7 @@ import Unauthorized from "./pages/Unauthorized";
 import Hierarchy from "./pages/Hierarchy";
 import TrainingHub from "./pages/TrainingHub";
 import Community from "./pages/Community";
+import CDCReceptionDashboard from "./pages/dashboards/CDCReceptionDashboard";
 import SuperAdminDashboard from "./pages/dashboards/SuperAdminDashboard";
 import SubAdminDashboard from "./pages/dashboards/SubAdminDashboard";
 import CDCAdminDashboard from "./pages/dashboards/CDCAdminDashboard";
@@ -52,6 +53,11 @@ const App = () => (
             <Route path="/dashboard/super-admin" element={
               <ProtectedRoute allowedRoles={['Super Admin']}>
                 <SuperAdminDashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/dashboard/cdc-reception" element={
+              <ProtectedRoute allowedRoles={['CDC Reception']}>
+                <CDCReceptionDashboard />
               </ProtectedRoute>
             } />
             <Route path="/dashboard/sub-admin" element={

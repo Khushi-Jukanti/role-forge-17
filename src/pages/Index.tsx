@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Heart, Users, GraduationCap, MessageCircle, Shield, Baby } from 'lucide-react';
+import logo from '@/assets/logo.jpg';
+import puzzlePattern from '@/assets/puzzle.jpg';
 
 export default function Index() {
   return (
@@ -10,9 +12,9 @@ export default function Index() {
       <header className="border-b bg-card/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Baby className="w-8 h-8 text-primary" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              CDC Platform
+            <img src={logo} alt="ManoSetu" className="w-10 h-10 object-contain" />
+            <span className="text-2xl font-bold bg-gradient-to-r from-primary via-accent to-accent-blue bg-clip-text text-transparent">
+              ManoSetu
             </span>
           </div>
           <div className="flex gap-3">
@@ -27,16 +29,29 @@ export default function Index() {
       </header>
 
       {/* Hero Content */}
-      <section className="container mx-auto px-4 py-20 text-center">
-        <div className="max-w-3xl mx-auto space-y-6">
-          <h1 className="text-5xl font-bold leading-tight">
-            Comprehensive Child Development Support
+      <section 
+        className="container mx-auto px-4 py-20 text-center relative"
+        style={{
+          backgroundImage: `url(${puzzlePattern})`,
+          backgroundSize: '250px',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'repeat',
+          backgroundBlendMode: 'overlay'
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/10 to-accent/5 -z-10" />
+        <div className="max-w-3xl mx-auto space-y-6 relative z-10">
+          <div className="flex justify-center mb-6">
+            <img src={logo} alt="ManoSetu Logo" className="w-24 h-24 object-contain drop-shadow-lg" />
+          </div>
+          <h1 className="text-5xl font-bold leading-tight bg-gradient-to-r from-primary via-accent to-accent-blue bg-clip-text text-transparent">
+            Bridging Hearts, Building Minds
           </h1>
           <p className="text-xl text-muted-foreground">
             Connect with expert therapists, track your child's progress, and access quality developmental assessments — all in one place.
           </p>
           <div className="flex gap-4 justify-center pt-4">
-            <Button size="lg" asChild>
+            <Button size="lg" asChild className="shadow-colored">
               <Link to="/register">Start Free Assessment</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
@@ -142,11 +157,11 @@ export default function Index() {
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex items-center gap-2">
-              <Baby className="w-6 h-6 text-primary" />
-              <span className="font-semibold">CDC Platform</span>
+              <img src={logo} alt="ManoSetu" className="w-6 h-6 object-contain" />
+              <span className="font-semibold">ManoSetu</span>
             </div>
             <p className="text-sm text-muted-foreground">
-              © 2025 CDC Platform. Supporting child development across India.
+              © 2025 ManoSetu. Bridging Hearts, Building Minds.
             </p>
           </div>
         </div>

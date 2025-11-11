@@ -21,6 +21,7 @@ import {
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
+import logo from '@/assets/logo.jpg';
 
 interface DashboardLayoutProps {
   children: ReactNode;
@@ -109,10 +110,8 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
           {/* Logo */}
           <div className="h-16 flex items-center px-6 border-b border-sidebar-border">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <Activity className="w-5 h-5 text-primary-foreground" />
-              </div>
-              {sidebarOpen && <span className="font-bold text-sidebar-foreground">HealthCare</span>}
+              <img src={logo} alt="ManoSetu" className="w-8 h-8 object-contain rounded-lg" />
+              {sidebarOpen && <span className="font-bold text-sidebar-foreground">ManoSetu</span>}
             </div>
           </div>
 

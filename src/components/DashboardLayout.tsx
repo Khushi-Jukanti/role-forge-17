@@ -22,6 +22,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import logo from '@/assets/logo.jpg';
+import Footer from '@/components/Footer';
 
 interface DashboardLayoutProps {
   children: ReactNode;
@@ -186,8 +187,11 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         </header>
 
         {/* Content */}
-        <main className="flex-1 overflow-auto p-6">
-          {children}
+        <main className="flex-1 overflow-auto">
+          <div className="p-6">
+            {children}
+          </div>
+          <Footer />
         </main>
       </div>
     </div>

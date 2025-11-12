@@ -17,7 +17,7 @@ import ChatbotWidget from '@/components/ChatbotWidget';
 
 export default function ParentDashboard() {
   const { user } = useAuth();
-  const [children, setChildren] = useState<Child[]>([]);
+  const [children, setChildren] = useState<Child[]>(() => []);
   const [selectedChild, setSelectedChild] = useState<Child | null>(null);
   const [assessments, setAssessments] = useState<Assessment[]>([]);
   const [results, setResults] = useState<AssessmentResult[]>([]);
@@ -49,37 +49,165 @@ export default function ParentDashboard() {
     }
   }, [selectedChild]);
 
+  // const loadChildren = async () => {
+  //   try {
+  //     const response = await parentAPI.getChildren();
+  //     setChildren(Array.isArray(response.data.children) ? response.data.children : []);
+  //     if (response.data.children.length > 0) {
+  //       setSelectedChild(response.data.children[0]);
+  //     }
+  //   } catch (error: any) {
+  //     toast.error(error.response?.data?.message || 'Failed to load children');
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+
+
+  // const loadChildren = async () => {
+  //   try {
+  //     const response = await parentAPI.getChildren({
+  //       headers: { 'Cache-Control': 'no-cache' }
+  //     });
+
+  //     console.log('Children API:', response.status, response.data); // DEBUG
+
+  //     let childrenData = [];
+
+  //     if (response.status === 200 && Array.isArray(response.data?.children)) {
+  //       childrenData = response.data.children;
+  //     }
+
+  //     setChildren(childrenData);
+
+  //     if (childrenData.length > 0) {
+  //       setSelectedChild(childrenData[0]);
+  //     } else {
+  //       setSelectedChild(null);
+  //     }
+  //   } catch (error: any) {
+  //     console.error('Load children error:', error);
+  //     toast.error('Failed to load children');
+  //     setChildren([]);
+  //     setSelectedChild(null);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+
   const loadChildren = async () => {
     try {
-      const response = await parentAPI.getChildren();
-      setChildren(response.data.children);
-      if (response.data.children.length > 0) {
-        setSelectedChild(response.data.children[0]);
+      const response = await parentAPI.getChildren({
+        headers: { 'Cache-Control': 'no-cache' }
+      });
+
+      console.log('API Response Status:', response.status);
+      console.log('API Response Data:', response.data);
+      console.log('response.data.children:', response.data?.children);
+
+      let childrenData: Child[] = [];
+
+      // CRITICAL: Check if children exists and is array
+      if (response.status === 200) {
+        const raw = response.data;
+        if (raw && Array.isArray(raw.children)) {
+          childrenData = raw.children;
+        } else if (Array.isArray(raw)) {
+          childrenData = raw; // fallback: maybe backend returns array directly
+        }
       }
+
+      console.log('Final childrenData:', childrenData);
+
+      setChildren(childrenData);
+      setSelectedChild(childrenData.length > 0 ? childrenData[0] : null);
+
     } catch (error: any) {
-      toast.error(error.response?.data?.message || 'Failed to load children');
+      console.error('Load children error:', error);
+      toast.error('Failed to load children');
+      setChildren([]);
+      setSelectedChild(null);
     } finally {
       setIsLoading(false);
     }
   };
 
+  // const loadAssessments = async (ageInMonths: number) => {
+  //   try {
+  //     const response = await parentAPI.getAssessmentsByAge(ageInMonths);
+  //     setAssessments(response.data.assessments);
+  //   } catch (error: any) {
+  //     toast.error(error.response?.data?.message || 'Failed to load assessments');
+  //   }
+  // };
+
+
+
+  // const loadResults = async (childId: string) => {
+  //   try {
+  //     const response = await parentAPI.getChildResults(childId);
+  //     setResults(response.data.results);
+  //   } catch (error: any) {
+  //     console.error('Failed to load results:', error);
+  //   }
+  // };
+
+  // const loadAssessments = async (ageInMonths: number) => {
+  //   if (!ageInMonths) return;
+  //   try {
+  //     const response = await parentAPI.getAssessmentsByAge(ageInMonths);
+  //     const data = response.data?.assessments;
+  //     setAssessments(Array.isArray(data) ? data : []);
+  //   } catch (error: any) {
+  //     console.error('Failed to load assessments:', error);
+  //     toast.error('Failed to load assessments');
+  //     setAssessments([]);
+  //   }
+  // };
+
+
   const loadAssessments = async (ageInMonths: number) => {
+    if (!ageInMonths) return;
+
     try {
-      const response = await parentAPI.getAssessmentsByAge(ageInMonths);
-      setAssessments(response.data.assessments);
+      const response = await parentAPI.getAssessmentsByAge(ageInMonths, {
+        headers: { 'Cache-Control': 'no-cache' }
+      });
+
+      console.log('Assessments API:', response.status, response.data); // DEBUG
+
+      let data: Assessment[] = [];
+
+      if (response.status === 200) {
+      const raw = response.data;
+      if (Array.isArray(raw?.assessments)) {
+        data = raw.assessments;
+      } else if (Array.isArray(raw)) {
+        data = raw; // <-- YOUR CASE: raw array
+      }
+    }
+      // 304 or error → keep empty
+
+      setAssessments(data);
+
     } catch (error: any) {
-      toast.error(error.response?.data?.message || 'Failed to load assessments');
+      console.error('Failed to load assessments:', error);
+      setAssessments([]);
     }
   };
 
   const loadResults = async (childId: string) => {
     try {
       const response = await parentAPI.getChildResults(childId);
-      setResults(response.data.results);
+      const data = response.data?.results;
+      setResults(Array.isArray(data) ? data : []);
     } catch (error: any) {
       console.error('Failed to load results:', error);
+      setResults([]);
     }
   };
+
+
 
   const handleAddChild = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -106,7 +234,7 @@ export default function ParentDashboard() {
     const newAnswers = [...answers, { isPositive }];
     setAnswers(newAnswers);
 
-    if (currentQuestionIndex < (currentAssessment?.questions.length || 0) - 1) {
+    if (currentQuestionIndex < (currentAssessment?.questions?.length ?? 0) - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       submitAssessment(newAnswers);
@@ -126,10 +254,10 @@ export default function ParentDashboard() {
       const result = response.data.result;
       setLatestResult(result);
       toast.success('Assessment submitted successfully!');
-      
+
       // Reload results
       await loadResults(selectedChild._id);
-      
+
       setAssessmentMode('results');
 
       // If consultation needed, show booking modal
@@ -195,11 +323,10 @@ export default function ParentDashboard() {
               {children.map(child => (
                 <Card
                   key={child._id}
-                  className={`cursor-pointer transition-all ${
-                    selectedChild?._id === child._id
-                      ? 'border-primary shadow-md'
-                      : 'hover:border-primary/50'
-                  }`}
+                  className={`cursor-pointer transition-all ${selectedChild?._id === child._id
+                    ? 'border-primary shadow-md'
+                    : 'hover:border-primary/50'
+                    }`}
                   onClick={() => setSelectedChild(child)}
                 >
                   <CardHeader>
@@ -246,7 +373,7 @@ export default function ParentDashboard() {
                           Back
                         </Button>
                         <Badge variant="secondary">
-                          Question {currentQuestionIndex + 1} of {currentAssessment.questions.length}
+                          Question {currentQuestionIndex + 1} of {currentAssessment?.questions?.length ?? 0}
                         </Badge>
                       </div>
 

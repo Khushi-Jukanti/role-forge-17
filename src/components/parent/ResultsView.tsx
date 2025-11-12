@@ -1,4 +1,4 @@
-import { AssessmentResult } from '@/store/slices/resultsSlice';
+import { AssessmentResult } from '@/store/slices/resultSlice';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';

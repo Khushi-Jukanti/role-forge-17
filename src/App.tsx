@@ -31,24 +31,23 @@ import CreatePsychiatrist from "./pages/create/CreatePsychiatrist";
 import CreateHelpDesk from "./pages/create/CreateHelpDesk";
 import CreateMarketing from "./pages/create/CreateMarketing";
 import NotFound from "./pages/NotFound";
+// import CDCReceptionistDashboard from "./pages/dashboards/CDCReceptionisDashboard";
 
 const queryClient = new QueryClient();
 
 const App = () => (
-  <Provider store={store}>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <AuthProvider>
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <AuthProvider>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/parent-login" element={<ParentLoginOTP />} />
             <Route path="/unauthorized" element={<Unauthorized />} />
-            
             {/* Dashboard Routes */}
             <Route path="/dashboard/super-admin" element={
               <ProtectedRoute allowedRoles={['Super Admin']}>
@@ -70,6 +69,11 @@ const App = () => (
                 <CDCAdminDashboard />
               </ProtectedRoute>
             } />
+            {/* <Route path="/dashboard/cdc-receptionist" element={
+              <ProtectedRoute allowedRoles={['CDC Receptionist']}>
+                <CDCReceptionistDashboard />
+              </ProtectedRoute>
+            } /> */}
             <Route path="/dashboard/psychiatrist" element={
               <ProtectedRoute allowedRoles={['Psychiatrist']}>
                 <PsychiatristDashboard />
@@ -95,14 +99,12 @@ const App = () => (
                 <MarketingDashboard />
               </ProtectedRoute>
             } />
-            
             {/* Hierarchy Route */}
             <Route path="/hierarchy" element={
               <ProtectedRoute>
                 <Hierarchy />
               </ProtectedRoute>
             } />
-            
             {/* Create User Routes */}
             <Route path="/create/subadmin" element={
               <ProtectedRoute allowedRoles={['Super Admin']}>
@@ -134,8 +136,6 @@ const App = () => (
                 <CreateMarketing />
               </ProtectedRoute>
             } />
-            
-            {/* Community & Training Routes */}
             <Route path="/training" element={
               <ProtectedRoute>
                 <TrainingHub />
@@ -146,7 +146,6 @@ const App = () => (
                 <Community />
               </ProtectedRoute>
             } />
-            
             {/* 404 Route */}
             <Route path="*" element={<NotFound />} />
           </Routes>
@@ -154,7 +153,6 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-  </Provider>
 );
 
 export default App;

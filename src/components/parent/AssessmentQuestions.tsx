@@ -8,7 +8,7 @@ import { Progress } from '@/components/ui/progress';
 import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
 import { setResponse, clearResponses } from '@/store/slices/assessmentsSlice';
-import { addResult } from '@/store/slices/resultsSlice';
+import { addResult } from '@/store/slices/resultSlice';
 import { toast } from 'sonner';
 
 interface AssessmentQuestionsProps {

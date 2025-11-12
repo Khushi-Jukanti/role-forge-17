@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { type AxiosRequestConfig } from 'axios';
 
 const BASE_URL = 'http://localhost:7000/api';
 
@@ -38,6 +38,7 @@ export interface Child {
   dateOfBirth: string;
   gender: 'Boy' | 'Girl';
   ageInMonths: number;
+  parent: string;
 }
 
 export interface Assessment {
@@ -138,31 +139,84 @@ export const userAPI = {
   createMarketing: (data: CreateUserData) => api.post<{ message: string; user: User }>('/users/create/marketing', data),
 };
 
-// Parent APIs
+
+// // Parent APIs
+// export const parentAPI = {
+//   // Children management
+//   addChild: (data: { firstName: string; lastName?: string; dateOfBirth: string; gender: 'Boy' | 'Girl' }, config?: AxiosRequestConfig) => 
+//     api.post<{ message: string; child: Child }>('/parent/children', data),
+
+//   getChildren: () => 
+//     api.get<{ children: Child[] }>('/parent/children'), // Now auto-filters by parentId
+//   // getChildren: () => api.get<{ children: Child[] }>('/parent/children'),
+//   getChild: (id: string) => api.get<{ child: Child }>(`/parent/children/${id}`),
+//   updateChild: (id: string, data: Partial<Child>) => api.put<{ message: string; child: Child }>(`/parent/children/${id}`, data),
+//   deleteChild: (id: string) => api.delete<{ message: string }>(`/parent/children/${id}`),
+
+//   // Assessments
+//   getAssessmentsByAge: (ageInMonths: number) => api.get<{ assessments: Assessment[] }>(`/parent/assessments?age=${ageInMonths}`),
+//   submitAssessment: (data: { childId: string; assessmentId: string; answers: { isPositive: boolean }[] }) =>
+//     api.post<{ message: string; result: AssessmentResult }>('/parent/assessments/submit', data),
+
+//   // Results
+//   getChildResults: (childId: string) => api.get<{ results: AssessmentResult[] }>(`/parent/results/child/${childId}`),
+//   getResult: (id: string) => api.get<{ result: AssessmentResult }>(`/parent/results/${id}`),
+
+//   // Booking & Payment
+//   createOrder: (data: { childId: string; resultId: string }) =>
+//     api.post<{ orderId: string; amount: number; key: string }>('/parent/booking/create-order', data),
+//   verifyPayment: (data: { razorpay_order_id: string; razorpay_payment_id: string; razorpay_signature: string }) =>
+//     api.post<{ message: string; booking: Booking }>('/parent/booking/verify', data),
+//   getBookings: () => api.get<{ bookings: Booking[] }>('/parent/bookings'),
+// };
+
+
 export const parentAPI = {
-  // Children management
-  addChild: (data: { firstName: string; lastName?: string; dateOfBirth: string; gender: 'Boy' | 'Girl' }) => 
-    api.post<{ message: string; child: Child }>('/parent/children', data),
-  getChildren: () => api.get<{ children: Child[] }>('/parent/children'),
-  getChild: (id: string) => api.get<{ child: Child }>(`/parent/children/${id}`),
-  updateChild: (id: string, data: Partial<Child>) => api.put<{ message: string; child: Child }>(`/parent/children/${id}`, data),
-  deleteChild: (id: string) => api.delete<{ message: string }>(`/parent/children/${id}`),
-  
-  // Assessments
-  getAssessmentsByAge: (ageInMonths: number) => api.get<{ assessments: Assessment[] }>(`/parent/assessments?age=${ageInMonths}`),
-  submitAssessment: (data: { childId: string; assessmentId: string; answers: { isPositive: boolean }[] }) =>
-    api.post<{ message: string; result: AssessmentResult }>('/parent/assessments/submit', data),
-  
-  // Results
-  getChildResults: (childId: string) => api.get<{ results: AssessmentResult[] }>(`/parent/results/child/${childId}`),
-  getResult: (id: string) => api.get<{ result: AssessmentResult }>(`/parent/results/${id}`),
-  
-  // Booking & Payment
-  createOrder: (data: { childId: string; resultId: string }) =>
-    api.post<{ orderId: string; amount: number; key: string }>('/parent/booking/create-order', data),
-  verifyPayment: (data: { razorpay_order_id: string; razorpay_payment_id: string; razorpay_signature: string }) =>
-    api.post<{ message: string; booking: Booking }>('/parent/booking/verify', data),
-  getBookings: () => api.get<{ bookings: Booking[] }>('/parent/bookings'),
+  // ── Children management ───────────────────────────────────────
+  addChild: (
+    data: { firstName: string; lastName?: string; dateOfBirth: string; gender: 'Boy' | 'Girl' },
+    config?: AxiosRequestConfig
+  ) => api.post<{ message: string; child: Child }>('/parent/children', data, config),
+
+  getChildren: (config?: AxiosRequestConfig) =>
+    api.get<{ children: Child[] }>('/parent/children', config),
+
+  getChild: (id: string, config?: AxiosRequestConfig) =>
+    api.get<{ child: Child }>(`/parent/children/${id}`, config),
+
+  updateChild: (id: string, data: Partial<Child>, config?: AxiosRequestConfig) =>
+    api.put<{ message: string; child: Child }>(`/parent/children/${id}`, data, config),
+
+  deleteChild: (id: string, config?: AxiosRequestConfig) =>
+    api.delete<{ message: string }>(`/parent/children/${id}`, config),
+
+  // ── Assessments ───────────────────────────────────────────────
+  getAssessmentsByAge: (ageInMonths: number, config?: AxiosRequestConfig) =>
+    api.get<{ assessments: Assessment[] }>(`/parent/assessments?age=${ageInMonths}`, config),
+
+  submitAssessment: (
+    data: { childId: string; assessmentId: string; answers: { isPositive: boolean }[] },
+    config?: AxiosRequestConfig
+  ) => api.post<{ message: string; result: AssessmentResult }>('/parent/assessments/submit', data, config),
+
+  // ── Results ───────────────────────────────────────────────────
+  getChildResults: (childId: string, config?: AxiosRequestConfig) =>
+    api.get<{ results: AssessmentResult[] }>(`/parent/results/child/${childId}`, config),
+
+  getResult: (id: string, config?: AxiosRequestConfig) =>
+    api.get<{ result: AssessmentResult }>(`/parent/results/${id}`, config),
+
+  // ── Booking & Payment ─────────────────────────────────────────
+  createOrder: (data: { childId: string; resultId: string }, config?: AxiosRequestConfig) =>
+    api.post<{ orderId: string; amount: number; key: string }>('/parent/booking/create-order', data, config),
+
+  verifyPayment: (
+    data: { razorpay_order_id: string; razorpay_payment_id: string; razorpay_signature: string },
+    config?: AxiosRequestConfig
+  ) => api.post<{ message: string; booking: Booking }>('/parent/booking/verify', data, config),
+
+  getBookings: (config?: AxiosRequestConfig) =>
+    api.get<{ bookings: Booking[] }>('/parent/bookings', config),
 };
 
 export default api;

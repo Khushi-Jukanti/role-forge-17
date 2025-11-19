@@ -31,18 +31,22 @@ import CreatePsychiatrist from "./pages/create/CreatePsychiatrist";
 import CreateHelpDesk from "./pages/create/CreateHelpDesk";
 import CreateMarketing from "./pages/create/CreateMarketing";
 import NotFound from "./pages/NotFound";
+import CdcAdminOnboarding from "./pages/CdcAdmin/CdcAdminOnboarding.jsx";
+import CdcList from "./pages/Superadmin/CdcList.jsx";
+import CdcDetail from "./pages/Superadmin/CdcDetail.jsx";
 // import CDCReceptionistDashboard from "./pages/dashboards/CDCReceptionisDashboard";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <AuthProvider>
-          <Routes>
+    <Provider store={store}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <AuthProvider>
+            <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
@@ -67,6 +71,21 @@ const App = () => (
             <Route path="/dashboard/cdc-admin" element={
               <ProtectedRoute allowedRoles={['CDC Admin']}>
                 <CDCAdminDashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/cdc-admin/onboarding" element={
+              <ProtectedRoute allowedRoles={['CDC Admin']}>
+                <CdcAdminOnboarding />
+              </ProtectedRoute>
+            } />
+            <Route path="/superadmin/cdc-centers" element={
+              <ProtectedRoute allowedRoles={['Super Admin']}>
+                <CdcList />
+              </ProtectedRoute>
+            } />
+            <Route path="/superadmin/cdc-centers/:id" element={
+              <ProtectedRoute allowedRoles={['Super Admin']}>
+                <CdcDetail />
               </ProtectedRoute>
             } />
             {/* <Route path="/dashboard/cdc-receptionist" element={
@@ -148,10 +167,11 @@ const App = () => (
             } />
             {/* 404 Route */}
             <Route path="*" element={<NotFound />} />
-          </Routes>
-        </AuthProvider>
-      </BrowserRouter>
-    </TooltipProvider>
+            </Routes>
+          </AuthProvider>
+        </BrowserRouter>
+      </TooltipProvider>
+    </Provider>
   </QueryClientProvider>
 );
 

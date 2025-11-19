@@ -3,12 +3,14 @@ import { useAuth } from '@/contexts/AuthContext';
 import { userAPI, DashboardResponse } from '@/lib/api';
 import DashboardLayout from '@/components/DashboardLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Shield, Users, UserPlus, Activity, TrendingUp, Settings } from 'lucide-react';
+import { Shield, Users, UserPlus, Activity, TrendingUp, Settings, Building2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 import puzzlePattern from '@/assets/puzzle.jpg';
 
 export default function SuperAdminDashboard() {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const [dashboardData, setDashboardData] = useState<DashboardResponse | null>(null);
 
   useEffect(() => {
@@ -136,6 +138,14 @@ export default function SuperAdminDashboard() {
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
+                <Button 
+                  variant="outline" 
+                  className="w-full justify-start"
+                  onClick={() => navigate('/superadmin/cdc-centers')}
+                >
+                  <Building2 className="w-4 h-4 mr-2" />
+                  Manage CDC Centers
+                </Button>
                 <Button variant="outline" className="w-full justify-start">
                   Create Sub Admin Account
                 </Button>

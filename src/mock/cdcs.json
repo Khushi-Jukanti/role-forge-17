@@ -1,0 +1,133 @@
+[
+  {
+    "id": "cdc-001",
+    "name": "Little Stars Child Development Center",
+    "ownerName": "Dr. Priya Sharma",
+    "email": "contact@littlestars.in",
+    "phone": "+91-9876543210",
+    "description": "Premier child development center offering comprehensive therapy services with experienced therapists and modern facilities.",
+    "yearsOfExperience": 8,
+    "address": {
+      "line1": "123, MG Road",
+      "line2": "Near City Hospital",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400001",
+      "coordinates": { "lat": 19.0760, "lng": 72.8777 }
+    },
+    "license": {
+      "number": "CDC/MH/2016/001234",
+      "documents": ["license-001.pdf", "registration-001.pdf"]
+    },
+    "services": ["Speech Therapy", "Occupational Therapy", "Physical Therapy", "Behavioral Therapy"],
+    "photos": [
+      "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400",
+      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400",
+      "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400"
+    ],
+    "verificationStatus": "Verified",
+    "therapistCount": 4,
+    "rating": 4.8,
+    "reviews": [
+      {
+        "id": "r1",
+        "parentName": "Anjali Mehta",
+        "rating": 5,
+        "comment": "Excellent staff and great facilities. My child has shown remarkable improvement.",
+        "date": "2024-01-15"
+      },
+      {
+        "id": "r2",
+        "parentName": "Rahul Kumar",
+        "rating": 4,
+        "comment": "Very professional therapists. Highly recommended for speech therapy.",
+        "date": "2024-02-10"
+      }
+    ]
+  },
+  {
+    "id": "cdc-002",
+    "name": "Sunshine Special Education Centre",
+    "ownerName": "Ms. Neha Gupta",
+    "email": "info@sunshinecdc.in",
+    "phone": "+91-9876543221",
+    "description": "Specialized center focusing on autism spectrum disorder and developmental delays with individualized care plans.",
+    "yearsOfExperience": 5,
+    "address": {
+      "line1": "45, Linking Road",
+      "line2": "Bandra West",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400050",
+      "coordinates": { "lat": 19.0596, "lng": 72.8295 }
+    },
+    "license": {
+      "number": "CDC/MH/2019/005678",
+      "documents": ["license-002.pdf"]
+    },
+    "services": ["Behavioral Therapy", "Special Education", "Speech Therapy", "Sensory Integration"],
+    "photos": [
+      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400",
+      "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400"
+    ],
+    "verificationStatus": "Verified",
+    "therapistCount": 3,
+    "rating": 4.6,
+    "reviews": [
+      {
+        "id": "r3",
+        "parentName": "Pooja Singh",
+        "rating": 5,
+        "comment": "Amazing team! They understand each child's unique needs.",
+        "date": "2024-01-20"
+      }
+    ]
+  },
+  {
+    "id": "cdc-003",
+    "name": "Rainbow Kids Therapy Center",
+    "ownerName": "Dr. Amit Patel",
+    "email": "contact@rainbowkids.in",
+    "phone": "+91-9876543232",
+    "description": "Multi-disciplinary approach to child development with focus on holistic growth and family involvement.",
+    "yearsOfExperience": 10,
+    "address": {
+      "line1": "78, Brigade Road",
+      "line2": "Opposite Central Park",
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "pincode": "560001",
+      "coordinates": { "lat": 12.9716, "lng": 77.5946 }
+    },
+    "license": {
+      "number": "CDC/KA/2014/009876",
+      "documents": ["license-003.pdf", "accreditation-003.pdf"]
+    },
+    "services": ["Physical Therapy", "Occupational Therapy", "Speech Therapy", "Play Therapy", "Art Therapy"],
+    "photos": [
+      "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400",
+      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=400",
+      "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400",
+      "https://images.unsplash.com/photo-1560184897-ae75f418493e?w=400"
+    ],
+    "verificationStatus": "Pending",
+    "therapistCount": 2,
+    "rating": 4.9,
+    "reviews": [
+      {
+        "id": "r4",
+        "parentName": "Sanjay Reddy",
+        "rating": 5,
+        "comment": "Best CDC in Bangalore! The therapists are highly qualified and caring.",
+        "date": "2024-02-05"
+      },
+      {
+        "id": "r5",
+        "parentName": "Kavita Iyer",
+        "rating": 5,
+        "comment": "Wonderful experience. My daughter loves coming here.",
+        "date": "2024-02-18"
+      }
+    ]
+  }
+]

@@ -1,0 +1,224 @@
+[
+  {
+    "id": "th-001",
+    "cdcId": "cdc-001",
+    "fullName": "Dr. Meera Reddy",
+    "specialization": "Speech Therapy",
+    "email": "meera.reddy@littlestars.in",
+    "phone": "+91-9876543240",
+    "experienceYears": 12,
+    "profilePhoto": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=200",
+    "bio": "Experienced speech-language pathologist specializing in pediatric communication disorders with focus on articulation and language development.",
+    "servicesProvided": ["Speech Therapy", "Language Development", "Articulation Therapy"],
+    "qualifications": [
+      {
+        "degreeName": "M.Sc. in Speech-Language Pathology",
+        "institute": "AIISH Mysore",
+        "yearOfCompletion": 2012
+      },
+      {
+        "degreeName": "B.Sc. in Audiology & Speech Therapy",
+        "institute": "Mumbai University",
+        "yearOfCompletion": 2010
+      }
+    ],
+    "certifications": [
+      "ASHA Certified",
+      "Pediatric Communication Specialist",
+      "Oral Motor Therapy Certification"
+    ],
+    "rating": 4.9
+  },
+  {
+    "id": "th-002",
+    "cdcId": "cdc-001",
+    "fullName": "Ms. Ananya Desai",
+    "specialization": "Occupational Therapy",
+    "email": "ananya.desai@littlestars.in",
+    "phone": "+91-9876543241",
+    "experienceYears": 8,
+    "profilePhoto": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200",
+    "bio": "Certified occupational therapist helping children develop fine motor skills, sensory processing, and daily living activities.",
+    "servicesProvided": ["Occupational Therapy", "Sensory Integration", "Fine Motor Skills"],
+    "qualifications": [
+      {
+        "degreeName": "Master of Occupational Therapy",
+        "institute": "TNMC Mumbai",
+        "yearOfCompletion": 2016
+      }
+    ],
+    "certifications": [
+      "Sensory Integration Certified",
+      "Handwriting Without Tears Instructor"
+    ],
+    "rating": 4.7
+  },
+  {
+    "id": "th-003",
+    "cdcId": "cdc-001",
+    "fullName": "Mr. Rohan Verma",
+    "specialization": "Physical Therapy",
+    "email": "rohan.verma@littlestars.in",
+    "phone": "+91-9876543242",
+    "experienceYears": 10,
+    "profilePhoto": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200",
+    "bio": "Pediatric physical therapist specializing in gross motor development, strength building, and movement disorders.",
+    "servicesProvided": ["Physical Therapy", "Gross Motor Development", "Strength Training"],
+    "qualifications": [
+      {
+        "degreeName": "MPT in Pediatrics",
+        "institute": "Delhi University",
+        "yearOfCompletion": 2014
+      }
+    ],
+    "certifications": [
+      "Certified Pediatric Physical Therapist",
+      "NDT Certified"
+    ],
+    "rating": 4.8
+  },
+  {
+    "id": "th-004",
+    "cdcId": "cdc-001",
+    "fullName": "Ms. Priyanka Joshi",
+    "specialization": "Behavioral Therapy",
+    "email": "priyanka.joshi@littlestars.in",
+    "phone": "+91-9876543243",
+    "experienceYears": 6,
+    "profilePhoto": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200",
+    "bio": "Applied Behavior Analysis specialist working with children with autism and developmental challenges using evidence-based interventions.",
+    "servicesProvided": ["Behavioral Therapy", "ABA Therapy", "Social Skills Training"],
+    "qualifications": [
+      {
+        "degreeName": "M.A. in Clinical Psychology",
+        "institute": "Pune University",
+        "yearOfCompletion": 2018
+      }
+    ],
+    "certifications": [
+      "Board Certified Behavior Analyst (BCBA)",
+      "Autism Spectrum Disorder Specialist"
+    ],
+    "rating": 4.9
+  },
+  {
+    "id": "th-005",
+    "cdcId": "cdc-002",
+    "fullName": "Dr. Sanjana Kulkarni",
+    "specialization": "Special Education",
+    "email": "sanjana.kulkarni@sunshinecdc.in",
+    "phone": "+91-9876543250",
+    "experienceYears": 9,
+    "profilePhoto": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200",
+    "bio": "Special educator with expertise in individualized education programs for children with learning disabilities and autism.",
+    "servicesProvided": ["Special Education", "Learning Disability Support", "IEP Development"],
+    "qualifications": [
+      {
+        "degreeName": "M.Ed. in Special Education",
+        "institute": "SNDT University Mumbai",
+        "yearOfCompletion": 2015
+      }
+    ],
+    "certifications": [
+      "RCI Licensed Special Educator",
+      "Autism Intervention Specialist"
+    ],
+    "rating": 4.8
+  },
+  {
+    "id": "th-006",
+    "cdcId": "cdc-002",
+    "fullName": "Ms. Riya Nair",
+    "specialization": "Speech Therapy",
+    "email": "riya.nair@sunshinecdc.in",
+    "phone": "+91-9876543251",
+    "experienceYears": 7,
+    "profilePhoto": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=200",
+    "bio": "Pediatric speech therapist focusing on communication enhancement for non-verbal and minimally verbal children.",
+    "servicesProvided": ["Speech Therapy", "AAC Implementation", "Feeding Therapy"],
+    "qualifications": [
+      {
+        "degreeName": "M.Sc. Speech Therapy",
+        "institute": "Manipal University",
+        "yearOfCompletion": 2017
+      }
+    ],
+    "certifications": [
+      "AAC Specialist",
+      "Feeding & Swallowing Certified"
+    ],
+    "rating": 4.6
+  },
+  {
+    "id": "th-007",
+    "cdcId": "cdc-002",
+    "fullName": "Mr. Karthik Menon",
+    "specialization": "Behavioral Therapy",
+    "email": "karthik.menon@sunshinecdc.in",
+    "phone": "+91-9876543252",
+    "experienceYears": 5,
+    "profilePhoto": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200",
+    "bio": "ABA therapist specializing in early intervention and parent training programs for autism spectrum disorder.",
+    "servicesProvided": ["Behavioral Therapy", "Early Intervention", "Parent Training"],
+    "qualifications": [
+      {
+        "degreeName": "M.A. Applied Behavior Analysis",
+        "institute": "Christ University Bangalore",
+        "yearOfCompletion": 2019
+      }
+    ],
+    "certifications": [
+      "RBT Certified",
+      "Early Intervention Specialist"
+    ],
+    "rating": 4.7
+  },
+  {
+    "id": "th-008",
+    "cdcId": "cdc-003",
+    "fullName": "Dr. Aditya Sharma",
+    "specialization": "Physical Therapy",
+    "email": "aditya.sharma@rainbowkids.in",
+    "phone": "+91-9876543260",
+    "experienceYears": 15,
+    "profilePhoto": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=200",
+    "bio": "Senior pediatric physiotherapist with extensive experience in cerebral palsy, developmental delays, and neurological conditions.",
+    "servicesProvided": ["Physical Therapy", "Neurological Rehabilitation", "Gait Training"],
+    "qualifications": [
+      {
+        "degreeName": "PhD in Pediatric Physiotherapy",
+        "institute": "Bangalore Medical College",
+        "yearOfCompletion": 2010
+      }
+    ],
+    "certifications": [
+      "NDT Certified Instructor",
+      "Pediatric Orthopedic Specialist"
+    ],
+    "rating": 5.0
+  },
+  {
+    "id": "th-009",
+    "cdcId": "cdc-003",
+    "fullName": "Ms. Divya Rao",
+    "specialization": "Occupational Therapy",
+    "email": "divya.rao@rainbowkids.in",
+    "phone": "+91-9876543261",
+    "experienceYears": 11,
+    "profilePhoto": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200",
+    "bio": "Expert occupational therapist specializing in sensory processing disorders and activities of daily living training.",
+    "servicesProvided": ["Occupational Therapy", "Sensory Processing", "ADL Training"],
+    "qualifications": [
+      {
+        "degreeName": "Master of Occupational Therapy",
+        "institute": "JSS Medical College Mysore",
+        "yearOfCompletion": 2013
+      }
+    ],
+    "certifications": [
+      "Sensory Integration Certification",
+      "DIR/Floortime Certified"
+    ],
+    "rating": 4.9
+  }
+]

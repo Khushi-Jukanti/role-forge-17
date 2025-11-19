@@ -1,0 +1,165 @@
+[
+  {
+    "id": "sch-001",
+    "therapistId": "th-001",
+    "therapistName": "Dr. Meera Reddy",
+    "cdcId": "cdc-001",
+    "monday": [
+      { "id": "slot-1", "startTime": "09:00", "endTime": "10:00", "status": "Available" },
+      { "id": "slot-2", "startTime": "10:00", "endTime": "11:00", "status": "Booked" },
+      { "id": "slot-3", "startTime": "11:00", "endTime": "12:00", "status": "Available" }
+    ],
+    "tuesday": [
+      { "id": "slot-4", "startTime": "09:00", "endTime": "10:00", "status": "Booked" },
+      { "id": "slot-5", "startTime": "10:00", "endTime": "11:00", "status": "Available" }
+    ],
+    "wednesday": [
+      { "id": "slot-6", "startTime": "09:00", "endTime": "10:00", "status": "Available" },
+      { "id": "slot-7", "startTime": "10:00", "endTime": "11:00", "status": "Available" }
+    ],
+    "thursday": [
+      { "id": "slot-8", "startTime": "09:00", "endTime": "10:00", "status": "Booked" },
+      { "id": "slot-9", "startTime": "11:00", "endTime": "12:00", "status": "Available" }
+    ],
+    "friday": [
+      { "id": "slot-10", "startTime": "09:00", "endTime": "10:00", "status": "Available" },
+      { "id": "slot-11", "startTime": "10:00", "endTime": "11:00", "status": "Available" }
+    ],
+    "saturday": [],
+    "sunday": []
+  },
+  {
+    "id": "sch-002",
+    "therapistId": "th-002",
+    "therapistName": "Ms. Ananya Desai",
+    "cdcId": "cdc-001",
+    "monday": [
+      { "id": "slot-12", "startTime": "14:00", "endTime": "15:00", "status": "Available" },
+      { "id": "slot-13", "startTime": "15:00", "endTime": "16:00", "status": "Available" }
+    ],
+    "tuesday": [
+      { "id": "slot-14", "startTime": "14:00", "endTime": "15:00", "status": "Booked" },
+      { "id": "slot-15", "startTime": "15:00", "endTime": "16:00", "status": "Available" }
+    ],
+    "wednesday": [
+      { "id": "slot-16", "startTime": "14:00", "endTime": "15:00", "status": "Available" },
+      { "id": "slot-17", "startTime": "16:00", "endTime": "17:00", "status": "Booked" }
+    ],
+    "thursday": [
+      { "id": "slot-18", "startTime": "14:00", "endTime": "15:00", "status": "Available" }
+    ],
+    "friday": [
+      { "id": "slot-19", "startTime": "14:00", "endTime": "15:00", "status": "Available" },
+      { "id": "slot-20", "startTime": "15:00", "endTime": "16:00", "status": "Available" }
+    ],
+    "saturday": [],
+    "sunday": []
+  },
+  {
+    "id": "sch-003",
+    "therapistId": "th-003",
+    "therapistName": "Mr. Rohan Verma",
+    "cdcId": "cdc-001",
+    "monday": [
+      { "id": "slot-21", "startTime": "10:00", "endTime": "11:00", "status": "Available" }
+    ],
+    "tuesday": [
+      { "id": "slot-22", "startTime": "10:00", "endTime": "11:00", "status": "Booked" },
+      { "id": "slot-23", "startTime": "11:00", "endTime": "12:00", "status": "Available" }
+    ],
+    "wednesday": [
+      { "id": "slot-24", "startTime": "10:00", "endTime": "11:00", "status": "Available" }
+    ],
+    "thursday": [
+      { "id": "slot-25", "startTime": "10:00", "endTime": "11:00", "status": "Available" },
+      { "id": "slot-26", "startTime": "11:00", "endTime": "12:00", "status": "Booked" }
+    ],
+    "friday": [
+      { "id": "slot-27", "startTime": "10:00", "endTime": "11:00", "status": "Available" }
+    ],
+    "saturday": [
+      { "id": "slot-28", "startTime": "09:00", "endTime": "10:00", "status": "Available" }
+    ],
+    "sunday": []
+  },
+  {
+    "id": "sch-004",
+    "therapistId": "th-004",
+    "therapistName": "Ms. Priyanka Joshi",
+    "cdcId": "cdc-001",
+    "monday": [
+      { "id": "slot-29", "startTime": "13:00", "endTime": "14:00", "status": "Booked" },
+      { "id": "slot-30", "startTime": "14:00", "endTime": "15:00", "status": "Available" }
+    ],
+    "tuesday": [
+      { "id": "slot-31", "startTime": "13:00", "endTime": "14:00", "status": "Available" }
+    ],
+    "wednesday": [
+      { "id": "slot-32", "startTime": "13:00", "endTime": "14:00", "status": "Available" },
+      { "id": "slot-33", "startTime": "14:00", "endTime": "15:00", "status": "Booked" }
+    ],
+    "thursday": [
+      { "id": "slot-34", "startTime": "13:00", "endTime": "14:00", "status": "Available" }
+    ],
+    "friday": [
+      { "id": "slot-35", "startTime": "13:00", "endTime": "14:00", "status": "Available" }
+    ],
+    "saturday": [],
+    "sunday": []
+  },
+  {
+    "id": "sch-005",
+    "therapistId": "th-005",
+    "therapistName": "Dr. Sanjana Kulkarni",
+    "cdcId": "cdc-002",
+    "monday": [
+      { "id": "slot-36", "startTime": "09:00", "endTime": "10:00", "status": "Available" },
+      { "id": "slot-37", "startTime": "10:00", "endTime": "11:00", "status": "Booked" }
+    ],
+    "tuesday": [
+      { "id": "slot-38", "startTime": "09:00", "endTime": "10:00", "status": "Available" }
+    ],
+    "wednesday": [
+      { "id": "slot-39", "startTime": "09:00", "endTime": "10:00", "status": "Available" },
+      { "id": "slot-40", "startTime": "11:00", "endTime": "12:00", "status": "Available" }
+    ],
+    "thursday": [
+      { "id": "slot-41", "startTime": "09:00", "endTime": "10:00", "status": "Booked" }
+    ],
+    "friday": [
+      { "id": "slot-42", "startTime": "09:00", "endTime": "10:00", "status": "Available" },
+      { "id": "slot-43", "startTime": "10:00", "endTime": "11:00", "status": "Available" }
+    ],
+    "saturday": [],
+    "sunday": []
+  },
+  {
+    "id": "sch-006",
+    "therapistId": "th-008",
+    "therapistName": "Dr. Aditya Sharma",
+    "cdcId": "cdc-003",
+    "monday": [
+      { "id": "slot-50", "startTime": "08:00", "endTime": "09:00", "status": "Available" },
+      { "id": "slot-51", "startTime": "09:00", "endTime": "10:00", "status": "Booked" },
+      { "id": "slot-52", "startTime": "10:00", "endTime": "11:00", "status": "Available" }
+    ],
+    "tuesday": [
+      { "id": "slot-53", "startTime": "08:00", "endTime": "09:00", "status": "Booked" },
+      { "id": "slot-54", "startTime": "09:00", "endTime": "10:00", "status": "Available" }
+    ],
+    "wednesday": [
+      { "id": "slot-55", "startTime": "08:00", "endTime": "09:00", "status": "Available" }
+    ],
+    "thursday": [
+      { "id": "slot-56", "startTime": "08:00", "endTime": "09:00", "status": "Available" },
+      { "id": "slot-57", "startTime": "10:00", "endTime": "11:00", "status": "Booked" }
+    ],
+    "friday": [
+      { "id": "slot-58", "startTime": "08:00", "endTime": "09:00", "status": "Available" }
+    ],
+    "saturday": [
+      { "id": "slot-59", "startTime": "09:00", "endTime": "10:00", "status": "Available" }
+    ],
+    "sunday": []
+  }
+]

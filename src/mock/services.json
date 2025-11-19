@@ -1,0 +1,58 @@
+[
+  {
+    "id": "srv-001",
+    "name": "Speech Therapy",
+    "description": "Helps children improve communication skills, speech clarity, and language development",
+    "icon": "MessageSquare",
+    "color": "#F28C38"
+  },
+  {
+    "id": "srv-002",
+    "name": "Occupational Therapy",
+    "description": "Develops fine motor skills, sensory processing, and daily living activities",
+    "icon": "Hand",
+    "color": "#73C2A5"
+  },
+  {
+    "id": "srv-003",
+    "name": "Physical Therapy",
+    "description": "Improves gross motor skills, strength, balance, and coordination",
+    "icon": "Activity",
+    "color": "#21B3D3"
+  },
+  {
+    "id": "srv-004",
+    "name": "Behavioral Therapy",
+    "description": "Addresses behavioral challenges and promotes positive behaviors through ABA",
+    "icon": "Brain",
+    "color": "#FFD39A"
+  },
+  {
+    "id": "srv-005",
+    "name": "Special Education",
+    "description": "Individualized educational programs for children with learning disabilities",
+    "icon": "BookOpen",
+    "color": "#F28C38"
+  },
+  {
+    "id": "srv-006",
+    "name": "Sensory Integration",
+    "description": "Helps children process and respond to sensory information effectively",
+    "icon": "Sparkles",
+    "color": "#73C2A5"
+  },
+  {
+    "id": "srv-007",
+    "name": "Play Therapy",
+    "description": "Uses play-based interventions to support emotional and social development",
+    "icon": "Gamepad2",
+    "color": "#21B3D3"
+  },
+  {
+    "id": "srv-008",
+    "name": "Art Therapy",
+    "description": "Creative expression to enhance communication and emotional well-being",
+    "icon": "Palette",
+    "color": "#FFD39A"
+  }
+]
